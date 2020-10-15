@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.16)
+## use this to globally use C++11 with in our project
+set(CMAKE_CXX_STANDARD 11)
+set(SpecularHighlightRemoval_DIR ../build)
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+#find_package(SpecularHighlightRemoval REQUIRED)
+find_package(SpecularHighlightRemoval REQUIRED)
+add_executable(demo main.cpp)
+#target_link_libraries(${TARGET} mylib)
+target_link_libraries(demo SpecularHighlightRemoval ${OpenCV_LIB_DIRS} )
