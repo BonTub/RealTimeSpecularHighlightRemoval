@@ -1,2 +1,15 @@
+== Ubuntu ==
 
-sudo apt install libopencv-dev python3-opencv
+sudo apt install libopencv-dev
+sudo apt install python3-opencv
+
+sudo apt install cmake ninja
+
+
+mkdir build
+cd build
+cmake -G Ninja ..
+ninja 
+#ninja test
+#ninja install
+

@@ -3,13 +3,13 @@
 
 #include <cuda_runtime.h>
 #include <stdio.h>
-#include <thrust\device_ptr.h>
-#include <thrust\copy.h>
-#include <thrust\device_vector.h>
-#include <thrust\host_vector.h>
-#include <thrust\count.h>
-#include <thrust\sort.h>
-#include <thrust\remove.h>
+#include <thrust/device_ptr.h>
+#include <thrust/copy.h>
+#include <thrust/device_vector.h>
+#include <thrust/host_vector.h>
+#include <thrust/count.h>
+#include <thrust/sort.h>
+#include <thrust/remove.h>
 
 void GPULoadRatio(int size);
 void GPUComputeMinMaxRange(unsigned char *originalImage, unsigned char *minImage, unsigned char *maxImage, unsigned char *rangeImage, size_t originalPitch, 

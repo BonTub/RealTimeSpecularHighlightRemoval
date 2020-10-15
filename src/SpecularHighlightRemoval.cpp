@@ -1,4 +1,4 @@
-#include "SpecularHighlightRemoval\SpecularHighlightRemoval.h"
+#include "SpecularHighlightRemoval.hpp"
 
 SpecularHighlightRemoval::SpecularHighlightRemoval()
 {

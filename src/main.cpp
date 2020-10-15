@@ -1,5 +1,5 @@
-#include <opencv2\opencv.hpp>
-#include "SpecularHighlightRemoval\SpecularHighlightRemoval.h"
+#include <opencv2/opencv.hpp>
+#include "../include/SpecularHighlightRemoval.h"
 
 int main(int argc, char **argv) 
 {
