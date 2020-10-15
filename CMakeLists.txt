@@ -1,13 +1,6 @@
-#cmake_minimum_required(VERSION 3.16) 
-## use this to globally use C++11 with in our project
-#project(shr) 
-include_directories(include)
-
-
-## add_executable(myczmq czmq.c)
-## target_link_libraries(myczmq czmq)                                                                                                                 ~                                      
 cmake_minimum_required(VERSION 3.5)
 project(SpecularHighlightRemoval VERSION 1.0.0 LANGUAGES CXX)
+## use this to globally use C++11 with in our project
 set(CMAKE_CXX_STANDARD 11)                          
 
 set(DEFAULT_BUILD_TYPE "Release")
@@ -18,11 +11,14 @@ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
   set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
 endif()
 
+include_directories(include)
 include(GNUInstallDirs)
 set(SOURCE_FILES src/SpecularHighlightRemoval.cpp)
+add_subdirectory(demo)
 
 find_package( OpenCV REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
+
 add_library(${PROJECT_NAME} ${SOURCE_FILES})
 target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -33,12 +29,12 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
     VERSION ${PROJECT_VERSION}
     SOVERSION 1)
 
-install(TARGETS ${PROJECT_NAME} EXPORT MyLibConfig
+install(TARGETS ${PROJECT_NAME} EXPORT SpecularHighlightRemovalConfig
     ARCHIVE  DESTINATION ${CMAKE_INSTALL_LIBDIR}
     LIBRARY  DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME  DESTINATION ${CMAKE_INSTALL_BINDIR})
 install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME})
 
-install(EXPORT MyLibConfig DESTINATION share/MyLib/cmake)
+install(EXPORT SpecularHighlightRemovalConfig DESTINATION share/SpecularHighlightRemoval/cmake)
 
-export(TARGETS ${PROJECT_NAME} FILE MyLibConfig.cmake)
+export(TARGETS ${PROJECT_NAME} FILE SpecularHighlightRemovalConfig.cmake)

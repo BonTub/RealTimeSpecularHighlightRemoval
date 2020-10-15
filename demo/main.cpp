@@ -1,12 +1,12 @@
 #include <opencv2/opencv.hpp>
-#include "../include/SpecularHighlightRemoval.h"
+#include "SpecularHighlightRemoval.hpp"
 
 int main(int argc, char **argv) 
 {
 
 	if(argc != 2) 
 	{
-		printf("Usage: SpecularHighlightRemoval.exe imagefile.extension\n");
+		printf("Usage: SpecularHighlightRemoval imagefile.extension\n");
 		return 0;
 	}
 

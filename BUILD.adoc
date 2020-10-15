@@ -3,7 +3,7 @@
 sudo apt install libopencv-dev
 sudo apt install python3-opencv
 
-sudo apt install cmake ninja
+sudo apt install cmake ninja-build
 
 
 mkdir build
@@ -11,5 +11,6 @@ cd build
 cmake -G Ninja ..
 ninja 
 #ninja test
-#ninja install
+sudo ninja install
+#sudo cmake --install .
 
