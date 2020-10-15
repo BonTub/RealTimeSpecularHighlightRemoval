@@ -2,6 +2,7 @@
 #define SPECULAR_HIGHLIGHT_REMOVAL_H
 
 #include <opencv2/opencv.hpp>
+#include <opencv2/core/core.hpp>
 #include "useCUDA.h"
 #ifdef REMOVE_SPECULAR_HIGHLIGHT_USING_CUDA
 #include <opencv2/gpu/gpu.hpp>
